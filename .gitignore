@@ -1,0 +1,8 @@
+# Environment
+.env
+.idea
+devapi.db
+*.pyc
+__pycache__
+migrations
+alembic.ini
