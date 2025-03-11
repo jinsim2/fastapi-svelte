@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
+from starlette.responses import FileResponse
+from starlette.staticfiles import StaticFiles
 
 from routers import answer_router, question_router, websocket_router, room_router, sse_rooms_router
 
@@ -34,3 +36,8 @@ app.include_router(answer_router.router)
 app.include_router(websocket_router.router)
 app.include_router(room_router.router)
 app.include_router(sse_rooms_router.router)
+app.mount("/assets", StaticFiles(directory="frontend/dist/assets"))
+
+@app.get("/")
+def index():
+    return FileResponse("frontend/dist/index.html")
