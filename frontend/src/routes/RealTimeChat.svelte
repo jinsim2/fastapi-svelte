@@ -8,7 +8,8 @@
     // 컴포넌트가 마운트되면 호출 (그리고 주기적으로 목록 갱신)
     onMount(() => {
       // FastAPI SSE 엔드포인트 URL (포트 및 도메인은 환경에 맞게 조정)
-      const eventSource = new EventSource("http://127.0.0.1:8000/api/sse/rooms/");
+    //   const eventSource = new EventSource("http://127.0.0.1:8000/api/sse/rooms/");
+      const eventSource = new EventSource("http://3.34.130.1:8000/api/sse/rooms/");
     
       eventSource.onmessage = (event) => {
         try {
