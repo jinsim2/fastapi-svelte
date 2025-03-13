@@ -1,6 +1,6 @@
 export function createWebSocketConnection(room) {
     // const wsUrl = `ws://127.0.0.1:8000/api/ws/chat/${room}`;
-    const wsUrl = `ws://3.34.130.1/api/ws/chat/${room}`;
+    const wsUrl = `ws://3.34.130.1:8000/api/ws/chat/${room}`;
     const ws = new WebSocket(wsUrl);
   
     ws.onopen = () => {
